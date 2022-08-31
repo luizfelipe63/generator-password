@@ -40,7 +40,8 @@ body{
   height: 3rem;
   border: none;
   color: black;
-  
+  display: flex;
+  align-items: center;
 }
 
 .settings input{
@@ -61,4 +62,9 @@ body{
   text-align: center;
   background-color: #145377d6;
   border-radius: 5px;
+  transition: .2s;
+}
+
+.gerator:hover{
+  background-color: #5eb0b9;
 }

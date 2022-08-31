@@ -13,85 +13,59 @@ const symbol = '!@#$%&*()_=+|'
 //Math.floor: Retorna o maior inteiro que é menor ou igual a um número.
 //Math.random: Retorna um número pseudo-aleatório entre 0 e 1.
 
-/*
-function getUpeerCase() {
-  return upeerLetters[Math.floor(Math.random() * upeerLetters.length)]
-}
-
-function getLowerCase() {
-  return lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
-}
-
-function getNumberCase() {
-  return number[Math.floor(Math.random() * number.length)]
-}
-
-function getSymbolCase() {
-  return symbol[Math.floor(Math.random() * symbol.length)]
-}
-
-function genaratorX() {
-  const xs = []
-
-  if (includeUppercase.checked) {
-    xs.push(getUpeerCase())
-  }
-
-  if (includeLowercase.checked) {
-    xs.push(getLowerCase())
-  }
-
-  if (includeNumbers.checked) {
-    xs.push(getNumberCase())
-  }
-
-  if (includeSymbols.checked) {
-    xs.push(getSymbolCase())
-  }
-
-  if (xs.length == 0) return ''
-
-  return xs[Math.floor(Math.random() * xs.length)]
-}
-
-generatePassword.addEventListener('click', () => {
-  const len = lenght.value
-  let password = ''
-  for (let i = 0; i < len; i++) {
-    const x = genaratorX()
-    password += x
-  }
-  resultText.innerHTML = password
-})
-*/
-
 class genaratorPassword {
   constructor(resultText) {
     this.resultText = resultText
-  }
-
-  getUpeerCase() {
-    return upeerLetters[Math.floor(Math.random() * upeerLetters.length)]
   }
 
   genaratorX() {
     const xs = []
 
     if (includeUppercase.checked) {
-      xs.push(this.getUpeerCase)
+      let uppperCase =
+        upeerLetters[Math.floor(Math.random() * upeerLetters.length)]
+      xs.push(uppperCase)
     }
+
+    if (includeLowercase.checked) {
+      let lowerCase =
+        lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
+      xs.push(lowerCase)
+    }
+
+    if (includeNumbers.checked) {
+      let numberCase = number[Math.floor(Math.random() * number.length)]
+      xs.push(numberCase)
+    }
+
+    if (includeSymbols.checked) {
+      let symbolCase = symbol[Math.floor(Math.random() * symbol.length)]
+      xs.push(symbolCase)
+    }
+
+    if (xs.length == 0) return ''
 
     return xs[Math.floor(Math.random() * xs.length)]
   }
 
-  updatteDisplay() {
+  //Gerar senhas
+  genarator() {
     const len = lenght.value
-    let password = ''
+    this.clear()
     for (let i = 0; i < len; i++) {
       const x = this.genaratorX()
-      password += x
+      this.result += x
     }
-    this.resultText.innerHTML = password
+  }
+
+  //Limpar tela
+  clear() {
+    this.result = ''
+  }
+
+  //Atulizar tela
+  updatteDisplay() {
+    this.resultText.innerHTML = this.result
   }
 }
 
@@ -99,5 +73,6 @@ const Password = new genaratorPassword(resultText)
 
 //Mostar a senha na tela
 generatePassword.addEventListener('click', () => {
+  Password.genarator()
   Password.updatteDisplay()
 })
