@@ -34,6 +34,10 @@ body{
   font-size: 1.5rem;
 }
 
+.result-container{
+  position: relative;
+}
+
 .result{
   background-color: white;
   width: 100%;
@@ -42,7 +46,36 @@ body{
   color: black;
   display: flex;
   align-items: center;
+  
 }
+
+.result-container .copy {
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	height: 40px;
+	width: 40px;
+}
+
+.copy{
+  
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.copy i{
+  font-size: 25px;
+  cursor: pointer;
+  color: #072d42;
+}
+
 
 .settings input{
  float: inline-end;

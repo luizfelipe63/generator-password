@@ -22,28 +22,38 @@
       <div class="title">
         <h1>Gerador de senhas</h1>
       </div>
-      <div class="result"></div>
+      <div class="result-container">
+        <div class="result"></div>
+        <span class="copy"><i class="fa-solid fa-clipboard"></i></span>
+      </div>
       <div progress></div>
       <div class="settings grid">
         <div class="checks">
           <label for="">Tamanho</label>
-          <input type="number" name="" id="lenght" />
+          <input
+            type="number"
+            name=""
+            id="lenght"
+            min="4"
+            max="20"
+            value="20"
+          />
         </div>
         <div class="checks">
           <label for="">Letras maiúsculas</label>
-          <input type="checkbox" name="" id="uppercase" />
+          <input type="checkbox" name="" id="uppercase" checked />
         </div>
         <div class="checks">
           <label for="">Letras minúsculas</label>
-          <input type="checkbox" name="" id="lowercase" />
+          <input type="checkbox" name="" id="lowercase" checked />
         </div>
         <div class="checks">
           <label for="">Incluir números</label>
-          <input type="checkbox" name="" id="numbers" />
+          <input type="checkbox" name="" id="numbers" checked />
         </div>
         <div class="checks">
           <label for="">Incluir simbolos</label>
-          <input type="checkbox" name="" id="symbols" />
+          <input type="checkbox" name="" id="symbols" checked />
         </div>
       </div>
       <div data-genarator class="gerator">
