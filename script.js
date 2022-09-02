@@ -4,6 +4,7 @@ const includeUppercase = document.getElementById('uppercase')
 const includeLowercase = document.getElementById('lowercase')
 const includeNumbers = document.getElementById('numbers')
 const includeSymbols = document.getElementById('symbols')
+const genaratorCopy = document.querySelector('[data-copy]')
 const generatePassword = document.querySelector('[data-genarator]')
 const upeerLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
@@ -58,6 +59,13 @@ class genaratorPassword {
     }
   }
 
+  //Copiar senha
+  copy() {
+    let passwordCopy = this.result
+    navigator.clipboard.writeText(passwordCopy)
+    alert('Senha copiada')
+  }
+
   //Limpar tela
   clear() {
     this.result = ''
@@ -75,4 +83,8 @@ const Password = new genaratorPassword(resultText)
 generatePassword.addEventListener('click', () => {
   Password.genarator()
   Password.updatteDisplay()
+})
+
+genaratorCopy.addEventListener('click', () => {
+  Password.copy()
 })
