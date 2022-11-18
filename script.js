@@ -6,9 +6,6 @@ const includeNumbers = document.getElementById('numbers')
 const includeSymbols = document.getElementById('symbols')
 const genaratorCopy = document.querySelector('[data-copy]')
 const generatePassword = document.querySelector('[data-genarator]')
-const upeerLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
-const number = '0123456789'
 const symbol = '!@#$%&*()_=+|'
 
 //Math.floor: Retorna o maior inteiro que é menor ou igual a um número.
@@ -23,19 +20,17 @@ class genaratorPassword {
     const xs = []
 
     if (includeUppercase.checked) {
-      let uppperCase =
-        upeerLetters[Math.floor(Math.random() * upeerLetters.length)]
+      let uppperCase = String.fromCharCode(Math.floor(Math.random() * 26) + 65)
       xs.push(uppperCase)
     }
 
     if (includeLowercase.checked) {
-      let lowerCase =
-        lowerLetters[Math.floor(Math.random() * lowerLetters.length)]
+      let lowerCase = String.fromCharCode(Math.floor(Math.random() * 26) + 97)
       xs.push(lowerCase)
     }
 
     if (includeNumbers.checked) {
-      let numberCase = number[Math.floor(Math.random() * number.length)]
+      let numberCase = String.fromCharCode(Math.floor(Math.random() * 10) + 48)
       xs.push(numberCase)
     }
 
